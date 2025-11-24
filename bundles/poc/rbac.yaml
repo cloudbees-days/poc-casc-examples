@@ -1,20 +1,6 @@
 # Safe during migration: don't delete undeclared roles/groups
 removeStrategy:
-  rbac: "update"
-
-# --- Groups ---
-groups:
-  - name: admins
-    members:
-      users:
-        - "admin"            # or swap for your IdP group below
-      # groups:
-      #   - "idp:cb-admins"  # example IdP group if you prefer group-based
-
-#  - name: authenticated
-#    members:
-#      groups:
-#        - "authenticated"    # special group: all logged-in users
+  rbac: SYNC
 
 # --- Roles (minimal set for the demo) ---
 roles:
@@ -27,11 +13,24 @@ roles:
 
   - name: pipeline-admin
     permissions:
-      - "Overall/Read"
-      - "View/Read"
-      - "Job/Read"
-      - "Job/Discover"
-      - "Job/Build"
-      - "Job/Cancel"
-      - "Job/Configure"
-      - "Job/Create"     # <-- this is the key permission
+      - hudson.model.Hudson.Administer
+
+# --- Groups ---
+groups:
+  - name: controller-admins
+    members:
+      users:
+        - "admin"            # or swap for your IdP group below
+    roles:
+      - name: pipeline-admin
+        grantedAt: current
+        
+      # groups:
+      #   - "idp:cb-admins"  # example IdP group if you prefer group-based
+
+#  - name: authenticated
+#    members:
+#      groups:
+#        - "authenticated"    # special group: all logged-in users
+
+

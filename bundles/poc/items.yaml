@@ -1,9 +1,40 @@
 # Allow CasC to create/update items cleanly
 removeStrategy:
-  items: "remove-supported"
-  rbac: "update"
-
+  rbac: SYNC
+  items: NONE
 items:
-  - kind: "folder"
-    name: "Mastercard"
-    displayName: "Mastercard"
+- kind: folder
+  name: Mastercard
+  description: ''
+  displayName: JobsFromPipelineTemplates
+  items:
+  - kind: cloudbeesTemplatedJob
+    catalog: cw-catalog
+    name: 4stage
+    model: cw-catalog/4stage
+    attributes:
+    - value: 4stage
+      key: name
+  - kind: cloudbeesTemplatedJob
+    catalog: cw-catalog
+    name: useDifferentAgents
+    model: cw-catalog/useDifferentAgents
+    attributes:
+    - value: useDifferentAgents
+      key: name
+  - kind: cloudbeesTemplatedJob
+    catalog: cw-catalog
+    name: useSharedAgent
+    model: cw-catalog/useSharedAgent
+    attributes:
+    - value: useSharedAgent
+      key: name
+  properties:
+  - envVars: {}
+  - itemRestrictions:
+      allowedTypes:
+      - cw-catalog/useSharedAgent
+      - cw-catalog/4stage
+      - cw-catalog/useDifferentAgents
+      - cw-catalog/useWindowsAgent
+      filter: true

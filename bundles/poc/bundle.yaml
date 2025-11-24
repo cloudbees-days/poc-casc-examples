@@ -1,7 +1,10 @@
-apiVersion: "1"
-id: "poc-folder-rbac"
-version: "1"
-description: "Create folder + restrict pipeline creation to admin"
+# bundle.yaml
+apiVersion: "2"            # use 2 to enable plugin mgmt v2 (backward compatible)
+id: "mastercard-folder-rbac"
+version: "3"               # <— bump this anytime you change the bundle
+description: "Create folder + RBAC and ensure CasC/Items plugins are present"
+plugins:
+  - "plugins.yaml"
 rbac:
   - "rbac.yaml"
 items:

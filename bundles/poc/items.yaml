@@ -7,16 +7,3 @@ items:
   - kind: "folder"
     name: "Mastercard"
     displayName: "Mastercard"
-    description: "Pipelines for Mastercard. Only admin can create."
-    # RBAC assignments scoped to this folder
-    groups:
-      # everyone logged in can browse/read inside the folder
-      - name: "authenticated"
-        roles:
-          - name: "browse"
-            grantedAt: "current"   # apply on the folder (propagates to children)
-      # only 'admins' get creation/config rights here
-      - name: "admins"
-        roles:
-          - name: "pipeline-admin"
-            grantedAt: "current"

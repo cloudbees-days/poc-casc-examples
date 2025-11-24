@@ -11,10 +11,10 @@ groups:
       # groups:
       #   - "idp:cb-admins"  # example IdP group if you prefer group-based
 
-  - name: authenticated
-    members:
-      groups:
-        - "authenticated"    # special group: all logged-in users
+#  - name: authenticated
+#    members:
+#      groups:
+#        - "authenticated"    # special group: all logged-in users
 
 # --- Roles (minimal set for the demo) ---
 roles:

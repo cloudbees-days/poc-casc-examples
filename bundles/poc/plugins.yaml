@@ -1,7 +1,14 @@
 # plugins.yaml
 plugins:
-  - id: "cloudbees-casc-client"
+  # RBAC + CasC core + Items
+  - id: "nectar-rbac"                 # CloudBees RBAC
+  - id: "configuration-as-code"       # JCasC
+  - id: "cloudbees-casc-client"       # CasC client (controller)
   - id: "cloudbees-casc-items-api"
   - id: "cloudbees-casc-items-commons"
   - id: "cloudbees-casc-items-controller"
-  - id: "configuration-as-code"
+  # Useful basics
+  - id: "cloudbees-folder"
+  - id: "credentials"
+  - id: "structs"
+  - id: "scm-api"

@@ -70,7 +70,6 @@ plugins:
 - id: javax-mail-api
 - id: jaxb
 - id: jdk-tool
-- id: jersey2-api
 - id: jira
 - id: jjwt-api
 - id: jquery3-api

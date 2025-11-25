@@ -69,6 +69,7 @@ plugins:
 - id: javax-activation-api
 - id: javax-mail-api
 - id: jaxb
+- id: jersey2-api
 - id: jdk-tool
 - id: jira
 - id: jjwt-api
